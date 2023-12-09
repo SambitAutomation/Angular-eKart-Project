@@ -1,0 +1,21 @@
+<div class="ekart-product-item">
+  <div class="ekart-whislist-sale-container">
+    <div class="ekart-add-to-wishlist">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
+    </div>
+    <div class="ekart-on-sale-tag" *ngIf="productt.discountPrice">
+      {{(100 -(productt.discountPrice / productt.price *100)).toFixed(0)}}%</div>
+  </div>
+  <div class="ekart-product-image">
+    <img [src]="productt.ImageURL" class="ekart-product-image">
+  </div>
+  <div class="ekart-add-to-price">
+    {{productt.price}}
+  </div>
+  <div class="ekart-product-name">{{productt.name}}</div>
+  <div class="ekart-product-category">{{productt.gender}} . {{productt.category}} . {{productt.brand}}</div>
+  <div class="ekart-product-available-colors">{{productt.color.length}} Colors . Best Seller</div>
+  <div class="ekart-product-in-staock"
+    [ngStyle]="{fontweight: 'bold', color: productt.is_in_inventory ? 'Green': 'Red'}">{{productt.is_in_inventory ?
+    'Available in Stock' : 'Not in Stcok'}}</div>
+</div>
